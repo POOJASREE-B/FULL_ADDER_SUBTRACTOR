@@ -1,4 +1,5 @@
-# FULL_ADDER_SUBTRACTOR
+
+# EXP4:FULL ADDER SUBTRACTOR
 
 Implementation-of-Full-Adder-and-Full-subtractor-circuit
 
@@ -44,16 +45,60 @@ Write the detailed procedure here
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+Full Adder:
+
+```
+module exp31(A,B,Cin,Sum,Carry);
+Input A,B,Cin;
+Output Sum,Carry;
+assign Sum=A^B^Cin;
+assign Carry=((A^B)&Cin)|(A&B);
+endmodule
+```
+
+Full Subtractor:
+
+```
+module expfs(a,b,bin,difference,borrow);
+  input a,b,bin;
+  output difference,borrow;
+  assign difference= ( (a ^ b)^bin);
+  assign borrow= ( ( a & b)| ( bin & ((a ^ b ))));
+  endmodule
+```
 
 **RTL Schematic**
 
+Full Adder:
+
+![Screenshot 2025-04-24 104002](https://github.com/user-attachments/assets/6ec64066-e553-4c07-83b0-b8716e10e8fc)
+
+
+
+Full Subtractor:
+
+![Screenshot 2025-04-24 104037](https://github.com/user-attachments/assets/42d45294-8d07-4c55-9104-ba3d49e13e2c)
+
+
+
+
 **Output Timing Waveform**
+
+Full Adder:
+
+![image](https://github.com/user-attachments/assets/afb324de-fc78-4878-a3dc-9eaa884cb6fb)
+
+
+
+Full Subtractor:
+
+![image](https://github.com/user-attachments/assets/adb4cf7e-c801-48df-8363-b1876894af6c)
+
+
+
 
 **Result:**
 
 Thus the Full Adder and Full Subtractor circuits are designed and the truth tables is verified using Quartus software.
-
 
 
